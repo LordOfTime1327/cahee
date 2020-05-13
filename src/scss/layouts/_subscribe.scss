@@ -1,0 +1,33 @@
+.subscribe {
+  background: url(../img/bg-subscribe.png) center center / cover no-repeat;
+  padding: 140px 0;
+
+  @include e(title) {
+    font-size: rem(40px);
+    font-weight: bold;
+    padding-bottom: 30px;
+  }
+  @include e(text) {
+    font-size: rem(17px);
+    font-weight: 300;
+    padding-bottom: 30px;
+  }
+
+  @include e(input) {
+    width: 100%;
+    padding: 20px 15px;
+    border: 1px solid #000;
+    font-size: rm(15px);
+    font-weight: 300;
+  }
+  @include e(submit) {
+    width: 100%;
+    padding: 20px 15px;
+    border: none;
+    background: #96b92c;
+    font-size: rem(20px);
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $white;
+  }
+}

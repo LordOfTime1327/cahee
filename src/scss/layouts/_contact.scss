@@ -1,0 +1,109 @@
+%inputTextarea {
+  width: 100%;
+  border: none;
+  border-left: 5px solid transparent;
+  background: rgba($color: #7cdede, $alpha: 0.8);
+  padding: 18px;
+  padding-left: 13px;
+  margin-bottom: 20px;
+  font-size: rem(15px);
+  font-weight: bold;
+  color: $white;
+  transition: 0.2s;
+
+  &:hover {
+    background: #00c4c4;
+  }
+  &:focus {
+    background: #00c4c4;
+    border-left-color: #355b82;
+  }
+}
+
+.contact {
+  background: url(../img/bg-contact.jpg) center center / cover no-repeat;
+  padding: 100px 0;
+
+  @include e(title) {
+    font-size: rem(50px);
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  @include e(text) {
+    font-size: rem(17px);
+    font-weight: 300;
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  @include e(input) {
+    @extend %inputTextarea;
+
+    &::placeholder {
+      color: $white;
+      font-weight: 300;
+    }
+  }
+
+  @include e(textarea) {
+    @extend %inputTextarea;
+    resize: none;
+    height: 250px;
+
+    &::placeholder {
+      color: $white;
+      font-weight: 300;
+    }
+  }
+
+  @include e(submit) {
+    background: #7cdede;
+    transition: 0.2s;
+    &:hover {
+      background: #00c4c4;
+    }
+  }
+
+  @include e(item) {
+    padding-top: 20px;
+    font-size: rem(20px);
+  }
+  @include e(contentTitle) {
+    font-size: inherit;
+    text-transform: uppercase;
+  }
+  @include e(contentText) {
+    color: inherit;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact {
+    @include e(title) {
+      font-size: rem(70px);
+    }
+    @include e(item) {
+      &:nth-of-type(1) {
+        padding-top: 0;
+      }
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  .contact {
+    @include e(formBox) {
+      padding-right: 70px;
+    }
+    @include e(content) {
+      padding-left: 70px;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact {
+    @include e(title) {
+      font-size: rem(90px);
+    }
+  }
+}

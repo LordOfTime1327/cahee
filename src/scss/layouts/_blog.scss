@@ -1,0 +1,100 @@
+.blog {
+  background: #b07cf7;
+  padding: 100px 0;
+  text-align: center;
+
+  @include e(title) {
+    font-size: rem(50px);
+    font-weight: bold;
+    color: $white;
+    padding-bottom: 30px;
+  }
+  @include e(text) {
+    font-size: rem(17px);
+    font-weight: 300;
+    color: $white;
+    padding-bottom: 30px;
+  }
+  @include e(card) {
+    margin-bottom: 30px;
+    box-shadow: 0 5px 10px -5px #000;
+  }
+  @include e(btn) {
+    background: #f72b3b;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+  }
+
+  @include e(img) {
+    display: block;
+    width: 100%;
+  }
+  @include e(date) {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: rem(21px);
+    font-weight: bold;
+    text-align: center;
+    color: $white;
+    text-transform: uppercase;
+    line-height: 25px;
+    padding: 5px;
+  }
+  @include e(textBox) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: $white;
+    text-align: left;
+  }
+  @include e(link) {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+  @include e(title) {
+    font-size: rem(20px);
+    padding-bottom: 20px;
+  }
+  @include e(author) {
+    color: inherit;
+    font-size: rem(13px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .blog {
+    @include e(title) {
+      font-size: rem(70px);
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .blog {
+    @include e(title) {
+      font-size: rem(90px);
+    }
+  }
+}

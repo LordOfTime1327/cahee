@@ -1,0 +1,33 @@
+.footer {
+  background: $textColor;
+  padding: 30px 0;
+
+  @include e(copyrights) {
+    text-align: center;
+    color: #b9b9b9;
+  }
+  @include e(logo) {
+    font-family: $Pacifico;
+    font-size: rem(25px);
+    text-align: center;
+    color: #b9b9b9;
+  }
+  @include e(poweredBy) {
+    text-align: center;
+    color: #b9b9b9;
+  }
+  @include e(pinkColor) {
+    color: #ff2b58;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    @include e(copyrights) {
+      text-align: left;
+    }
+    @include e(poweredBy) {
+      text-align: right;
+    }
+  }
+}

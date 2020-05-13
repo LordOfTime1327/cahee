@@ -1,0 +1,144 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+}
+* {
+  font-family: $Raleway;
+  color: $textColor;
+}
+body {
+  position: relative;
+}
+.navbar {
+  background: transparent;
+  top: 0;
+  transition: 0.3s;
+}
+.navbar-brand {
+  font-family: $Pacifico;
+  font-size: rem(50px);
+  transition: 0.2s;
+}
+
+%togglerBar {
+  width: 100%;
+  height: 3px;
+  background: #000;
+  transform-origin: center;
+  transition: all 0.3s, background 0s;
+}
+.navbar-toggler {
+  box-sizing: content-box;
+  border: none;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+
+  @include e(bar) {
+    @extend %togglerBar;
+    position: relative;
+
+    &::before {
+      content: "";
+      @extend %togglerBar;
+      position: absolute;
+      top: -10px;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      @extend %togglerBar;
+      position: absolute;
+      top: 10px;
+      left: 0;
+    }
+  }
+  @include e(close) {
+    background: transparent;
+
+    &::before {
+      content: "";
+      top: 0;
+      transform: rotate(45deg);
+    }
+    &::after {
+      content: "";
+      top: 0;
+      transform: rotate(-45deg);
+    }
+  }
+}
+.nav-link {
+  font-family: $Raleway;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $textColor;
+  padding: 8px 0;
+  margin: 0 16px;
+  transition: all 0.15s;
+
+  &:hover {
+    color: $textColor;
+    transform: translateY(-3px);
+    &.active {
+      &::before {
+        transform: translateY(3px);
+      }
+    }
+  }
+
+  &.active {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #ff6033;
+      transition: all 0.15s;
+    }
+  }
+}
+
+.btn {
+  border: 3px solid transparent;
+  outline: none;
+  border-radius: 0;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  color: $white;
+  font-size: rem(20px);
+  font-weight: 300;
+  transition: all 0.3s;
+
+  &:hover {
+    color: $white;
+    background: transparent;
+  }
+}
+
+.card {
+  border-radius: 0px;
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    padding: 12px 55px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .navbar {
+    top: 50px;
+  }
+}

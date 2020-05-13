@@ -1,0 +1,42 @@
+.about {
+  padding: 70px 0;
+  background: #00b1b1;
+
+  @include e(title) {
+    font-size: rem(50px);
+    font-weight: bold;
+    color: $white;
+  }
+  @include e(text) {
+    font-size: rem(17px);
+    font-weight: 300;
+    color: $white;
+  }
+
+  @include e(img) {
+    display: block;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    @include e(title) {
+      font-size: rem(70px);
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  .about {
+    @include e(content) {
+      padding-left: 85px;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .about {
+    @include e(title) {
+      font-size: rem(90px);
+    }
+  }
+}

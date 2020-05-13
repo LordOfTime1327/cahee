@@ -1,0 +1,45 @@
+.gallery {
+  background: #ffe92f;
+  padding: 100px 0;
+  text-align: center;
+
+  @include e(title) {
+    font-size: rem(50px);
+    font-weight: bold;
+    padding-bottom: 30px;
+  }
+  @include e(text) {
+    font-size: rem(17px);
+    font-weight: 300;
+    padding-bottom: 30px;
+  }
+  @include e(img) {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  @include e(btn) {
+    border-color: #5585a2;
+    background: #5585a2;
+    margin-bottom: 20px;
+
+    &:hover {
+      color: #5585a2;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .gallery {
+    @include e(title) {
+      font-size: rem(70px);
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gallery {
+    @include e(title) {
+      font-size: rem(90px);
+    }
+  }
+}
